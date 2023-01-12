@@ -1,0 +1,105 @@
+<div class="container">
+  <h2 class="my-3">Search View</h2>
+  <div class="formdiv card">
+    <div class="card-body p-4">
+      <div class="row mb-3">
+        <div class="col-6">
+          <h3>Search Station</h3>
+        </div>
+        <div class="col-6">
+          <a
+            style="background-color: orange; text-decoration: none"
+            routerLink="/addview"
+            class="p-2 text-dark rounded-3 float-end"
+            >+ Add new station</a
+          >
+        </div>
+      </div>
+      <form #searchForm name="myForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-6">
+            <label for="Sname" class="form-label">Station Name</label>
+            <input
+              type="text"
+              name="name"
+              [(ngModel)]="myForm.Name"
+              class="form-control"
+              id="myInput"
+              placeholder="Station names.."
+              title=""
+            />
+          </div>
+          <div class="col-6">
+            <label for="inputPassword5" class="form-label">City</label>
+            <input
+              type="text"
+              name="city"
+              class="form-control"
+              id="myInput"
+              [(ngModel)]="myForm.City"
+              placeholder="City"
+              title=""
+            />
+          </div>
+        </div>
+        <hr />
+        <div class="row">
+          <div class="col-1">
+            <button
+              type="submit"
+              class="btn btn-primary ms-2"
+              style="width: 90px; padding: 10px"
+            >
+              Search
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="stationList">
+    <table class="table mt-4">
+      <thead>
+        <tr>
+          <th scope="col">COMPANY NAME</th>
+          <th scope="col" (click)="sort('Name')">STATION NAME</th>
+          <th scope="col" (click)="sort('City')">CITY</th>
+          <th scope="col" (click)="sort('State')">STATE</th>
+          <th scope="col" (click)="sort('Zip')">ZIP</th>
+          <th scope="col" (click)="sort('Phone')">CONTACT</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let element of newList">
+          <td>{{ element.CompanyId }}</td>
+          <td>{{ element.Name }}</td>
+          <td>{{ element.City }}</td>
+          <td>{{ element.State }}</td>
+          <td>{{ element.Zip }}</td>
+          <td>{{ element.Phone }}</td>
+          <td>
+            <i
+              class="fa-regular fa-pen-to-square me-3"
+              routerLink="/editview/{{ element._id }}"
+            ></i>
+            <i class="fa-solid fa-trash-can" (click)="delete(element._id)"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <select (change)="handlePageChange($event)">
+      <option value="5" selected>5</option>
+      <option value="10">10</option>
+      <option value="15">15</option>
+      <option value="20">20</option>
+    </select>
+    <app-pagination-module
+      [totalRecords]="totalRecords"
+      [pageNumber]="pageNumber"
+      (setPageNumber)="sort1($event)"
+      [pageSize]="pageSize"
+    ></app-pagination-module>
+  </div>
+</div>

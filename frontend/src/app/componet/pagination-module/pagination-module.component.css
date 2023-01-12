@@ -1,0 +1,29 @@
+.page-link{
+    border-radius: 50%;
+    text-decoration-color: black;
+    color: black;
+    cursor: pointer;
+}
+
+.page-item:first-child .page-link{
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+}
+
+.page-item:last-child .page-link {
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+
+.page-item{
+    margin: 0px 5px;
+}
+
+.page-item.active .page-link{
+    color: white;
+    text-decoration-color: white;
+}
+
+.page-item.active .page-link{
+    background-color: #0d6efd;
+}

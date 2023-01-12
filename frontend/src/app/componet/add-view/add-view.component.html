@@ -1,0 +1,145 @@
+<div class="container">
+  <h3>Station Management</h3>
+  <div class="formdiv">
+    <form [formGroup]="empForm">
+      <h4>Setup New Station</h4>
+      <br />
+      <div class="row g-6 align-items-center">
+        <div class="col-6">
+          <label for="inputPassword5" class="form-label">Select Company Name*</label>
+          <select id="role" class="form-select form-control" formControlName="CompanyId">
+            <option value="{{ data.id }}" *ngFor="let data of selectedlevel">
+              {{ data.name }}
+            </option>
+          </select>
+          <div *ngIf="empForm.controls['CompanyId'].invalid && (empForm.controls['CompanyId'].dirty || empForm.controls['CompanyId'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['CompanyId'].errors['required']">
+              Select Company Name.
+          </div>
+        </div>
+        </div>
+        <div class="col-6">
+          <label for="Name" class="form-label mx-3">Station Name*</label>
+          <input class="form-control" type="text" id="" placeholder="Station names.." formControlName="Name" />
+          <div *ngIf="empForm.controls['Name'].invalid && (empForm.controls['Name'].dirty || empForm.controls['Name'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['Name'].errors['required']">
+             Name is required.
+          </div>
+        </div>
+        </div>
+      </div>
+      <br />
+      <div class="row g-3 align-items-center">
+        <div class="col-6">
+          <label for="inputPassword5" class="form-label">Address 1</label>
+          <input class="form-control" type="text" id="" placeholder="Address1" formControlName="Address1" />
+          <div *ngIf="empForm.controls['Address1'].invalid && (empForm.controls['Address1'].dirty || empForm.controls['Address1'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['Address1'].errors['required']">
+              Address1 is required.
+          </div>
+        </div>
+        </div>
+        <div class="col-6">
+          <label for="address2" class="form-label mx-3">Address 2</label>
+          <input class="form-control" type="text" id="" placeholder="Address2" formControlName="Address2" />
+          <div *ngIf="empForm.controls['Address2'].invalid && (empForm.controls['Address2'].dirty || empForm.controls['Address2'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['Address2'].errors['required']">
+              Address2 is required.
+          </div>
+        </div>
+        </div>
+      </div>
+      <br />
+      <div class="row g-3 align-items-center">
+        <div class="col-6">
+          <label for="inputPassword5" class="form-label">City</label>
+          <input class="form-control" type="text" id="" placeholder="city" formControlName="City" />
+          <div *ngIf="empForm.controls['City'].invalid && (empForm.controls['City'].dirty || empForm.controls['City'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['City'].errors['required']">
+              City is required.
+          </div>
+        </div>
+        </div>
+        <div class="col-6">
+          <label for="state" class="form-label mx-3">State</label>
+          <input class="form-control" type="text" id="" placeholder="State" formControlName="State" />
+          <div *ngIf="empForm.controls['State'].invalid && (empForm.controls['State'].dirty || empForm.controls['State'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['State'].errors['required']">
+              State is required.
+          </div>
+        </div>
+        </div>
+      </div>
+      <br />
+      <div class="row g-3 align-items-center">
+        <div class="col-6">
+          <label for="inputPassword5" class="form-label">Zip</label>
+          <input class="form-control" type="text" id="" placeholder="Zip" formControlName="Zip" />
+          <div *ngIf="empForm.controls['Zip'].invalid && (empForm.controls['Zip'].dirty || empForm.controls['Zip'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['Zip'].errors['required']">
+              Zip is required.
+          </div>
+        </div>
+        </div>
+        <div class="col-6">
+          <label for="phone" class="form-label mx-3">Phone</label>
+          <input class="form-control" type="string" id="" placeholder="Phone" formControlName="Phone" />
+          <div *ngIf="empForm.controls['Phone'].invalid && (empForm.controls['Phone'].dirty || empForm.controls['Phone'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['Phone'].errors['required']">
+              Phone is required.
+          </div>
+        </div>
+        </div>
+      </div><br>
+      <div class="row g-3 align-items-center">
+        <div class="col-6">
+          <label for="inputPassword5" class="form-label">Email</label>
+          <input class="form-control" type="email" id="" placeholder="Email" formControlName="email" />
+          <div *ngIf="empForm.controls['email'].invalid && (empForm.controls['email'].dirty || empForm.controls['email'].touched)" class="alert alert-danger">
+            <div *ngIf="empForm.controls['email'].errors['required']">
+              Email is required.
+          </div>
+        </div>
+        <div id="emailHelp" class="form-text">
+          Ex-  aaa@gmail.com
+      </div>
+        </div>
+        <div class="col-6">
+          <label for="phone" class="form-label mx-3">Password</label>
+          <input class="form-control" type="password" id="" placeholder="Password" formControlName="password" />
+          <div *ngIf="empForm.controls['password'].invalid && (empForm.controls['password'].dirty || empForm.controls['password'].touched)" class="alert alert-danger ">
+            <div *ngIf="empForm.controls['password'].errors['required']">
+              Password is required.
+          </div>
+        </div>
+        </div>
+      </div>
+      <br />
+      <div class="row g-3 align-items-center">
+        <div class="col-6">
+          <input class="me-2" type="checkbox" id="" name="" value="" formControlName="DisplayInAssetViews" />
+
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            DisplayInAssetViews
+          </label>
+        </div>
+
+        <div class="col-6">
+          <input class="me-2" type="checkbox" id="" name="" value="Car" formControlName="IsActive" />
+          <label class="form-check-label" for="flexCheckIndeterminate">
+            IsActive
+          </label>
+        </div>
+      </div>
+      <br />
+      <hr />
+      <button class="btn sub" [disabled]="empForm.pristine || empForm.invalid" type="submit" routerLink="/listview" (click)="diag()">
+        Submit
+      </button>
+      <button class="btn can" type="submit" routerLink="/listview">
+        Cancel
+      </button>
+      <br />
+    </form>
+  </div>
+</div>
