@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'listview', loadChildren: () => import('./componet/list-view/list-view-routing.module').then(x => x.ListviewRoutingModule), canActivate: [AuthGuard] },
   { path: 'editview/:id', loadChildren: () => import('./componet/edit-view/edit-view-routing.module').then(x => x.EditviewRoutingModule), canActivate: [AuthGuard] },
   { path: 'addview', loadChildren: () => import('./componet/add-view/add-view-routing.module').then(x => x.AddviewRoutingModule)},
-  
+  { path: 'chatbuddy', loadChildren: () => import('./componet/chatbuddy/chatbuddy-routing.module').then(x => x.ChatbuddyRoutingModule)},
 
 ];
 

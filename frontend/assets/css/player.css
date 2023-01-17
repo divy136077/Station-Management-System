@@ -1,0 +1,134 @@
+.player {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+.details {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+
+.now-playing {
+  font-size: 1rem;
+}
+
+.track-name {
+    /*font-size: 3rem;*/
+    margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.playpause-track, .prev-track, .next-track {
+  padding: 25px;
+  opacity: 0.8;
+
+  /* Smoothly transition the opacity */
+  transition: opacity .2s;
+}
+
+.playpause-track:hover, .prev-track:hover, .next-track:hover {
+  opacity: 1.0;
+}
+
+.slider_container {
+ width: 100%;
+    max-width: 549px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-dir{
+  flex-direction: column;
+ 
+}
+.flex-dir .d-flex {
+    justify-content: space-between;
+    width: 100%;
+    max-width: 550px;
+    align-items: center;
+    margin-top: 20px;
+}
+/* Modify the appearance of the slider */
+.seek_slider, .volume_slider {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    height: 19px;
+    background: url(../images/track.png) no-repeat;
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    background-size: contain; 
+}
+/* Modify the appearance of the slider thumb */
+.seek_slider::-webkit-slider-thumb, .volume_slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 44px;
+  height: 44px;
+  background: #fe8400;
+    border:2px solid #342013;
+
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.seek_slider:hover, .volume_slider:hover {
+  opacity: 1.0;
+}
+
+.seek_slider {
+    width: 100%;
+    max-width: 549px;
+
+}
+.volume_slider {
+  width: 100%;
+   max-width: 549px;
+}
+
+.current-time, .total-duration {
+  padding: 10px;
+  font-size: 38px;
+font-family: 'HelveticaNeueMedium';
+}
+
+i.fa-volume-down, i.fa-volume-up {
+  padding: 10px;
+}
+
+i.fa-play-circle, i.fa-pause-circle, i.fa-step-forward, i.fa-step-backward {
+  cursor: pointer;
+}
+.volume_slider {
+    width: 100%;
+    max-width: 549px;
+}
+.slider_container.vol-slider {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+@media (max-width: 767px){
+  .flex-dir {
+    max-width: calc(100% - 100px);
+}
+}
