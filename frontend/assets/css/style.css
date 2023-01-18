@@ -1537,7 +1537,7 @@ main {
 
 /*chat buddy*/
 .chat-bg {
-    background: url(../images/chat-buddy.jpg) no-repeat;
+    background: url("../images/chat-buddy.jpg") no-repeat;
     background-size: cover;
     min-height: calc(100vh - 100px);
     height: 100%;
